@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkbbsau3e64pw"]
+
+[ext_resource type="Shader" uid="uid://bo4ykmjnsscif" path="res://addons/quad_color_grad_rect/shaders/quad_corner_grad.gdshader" id="1_n51mc"]
+[ext_resource type="Script" uid="uid://bphdldoykii8h" path="res://addons/quad_color_grad_rect/scripts/quad_gradient_rect.gd" id="2_8lvy3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcwec"]
+shader = ExtResource("1_n51mc")
+shader_parameter/topleft = Color(1, 1, 0, 1)
+shader_parameter/topright = Color(0, 0, 0.5019608, 1)
+shader_parameter/bottomleft = Color(0.54509807, 0, 0, 1)
+shader_parameter/bottomright = Color(0.85490197, 0.4392157, 0.8392157, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuadGradientRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wcwec")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_8lvy3")
+metadata/_custom_type_script = "uid://bphdldoykii8h"
